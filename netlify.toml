@@ -1,0 +1,5 @@
+# Netlify publishes only the site/ folder. Everything else in this repo
+# (README, tests) stays private and is never served.
+[build]
+  publish = "site"
+  command = ""
