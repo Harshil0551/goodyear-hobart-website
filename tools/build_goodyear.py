@@ -180,7 +180,7 @@ def build(d, today):
       </div>
     </div>
 
-    <p class="gy-note">This is a summary of Goodyear Australia's published warranties and promotions, last checked on {nice_date(d["checked"])}. Goodyear's full terms apply and can change: read them at <a href="https://www.goodyear.com.au/warranty" target="_blank" rel="noopener">goodyear.com.au/warranty</a> and <a href="https://www.goodyear.com.au/promotions" target="_blank" rel="noopener">goodyear.com.au/promotions</a>. Goodyear promotions, the Tyre Protection Plan and mileage warranties are offered at {who}. Our goods and services come with guarantees that cannot be excluded under the Australian Consumer Law.</p>
+    <p class="gy-note">This is a summary of Goodyear Australia's published warranties and promotions, which we check every day. Last updated {nice_date(d["checked"])}. Goodyear's full terms apply and can change: read them at <a href="https://www.goodyear.com.au/warranty" target="_blank" rel="noopener">goodyear.com.au/warranty</a> and <a href="https://www.goodyear.com.au/promotions" target="_blank" rel="noopener">goodyear.com.au/promotions</a>. Goodyear promotions, the Tyre Protection Plan and mileage warranties are offered at {who}. Our goods and services come with guarantees that cannot be excluded under the Australian Consumer Law.</p>
   </div>
 </section>
 <script>

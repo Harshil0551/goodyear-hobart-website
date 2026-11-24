@@ -1,5 +1,5 @@
 {
-  "_about": "Facts shown in the 'Goodyear deals & warranties' section of site/index.html. Edit this file, then run: python3 tools/build_goodyear.py. Everything here must match goodyear.com.au word-for-word in meaning; never invent a deal, date or number.",
+  "_about": "Facts shown in the 'Goodyear deals & warranties' section of site/index.html. Edit this file, then run: python3 tools/build_goodyear.py. 'checked' is the date this summary was last UPDATED (shown on the site as 'Last updated'); only change it when the content changes. Everything here must match goodyear.com.au in meaning; never invent a deal, date or number.",
   "checked": "2026-11-24",
   "store_participates_in_national_promotions": true,
   "promotions": [],
