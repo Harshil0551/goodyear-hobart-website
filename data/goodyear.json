@@ -1,0 +1,103 @@
+{
+  "_about": "Facts shown in the 'Goodyear deals & warranties' section of site/index.html. Edit this file, then run: python3 tools/build_goodyear.py. Everything here must match goodyear.com.au word-for-word in meaning; never invent a deal, date or number.",
+  "checked": "2026-11-24",
+  "store_participates_in_national_promotions": true,
+  "promotions": [],
+  "closed_promotions_seen": [
+    {
+      "title": "Up to $250 e-gift card with a set of 4 eligible Goodyear consumer tyres",
+      "purchase_from": "2026-06-01",
+      "purchase_to": "2026-06-30",
+      "claim_by": "2026-07-14",
+      "note": "Closed. Participating dealers only.",
+      "source_url": "https://www.goodyear.com.au/promotions"
+    }
+  ],
+  "tpp": {
+    "free_with": "2 or more Goodyear passenger tyres bought in the same transaction",
+    "price_car_tyre": 11.0,
+    "price_suv_4wd_ult_tyre": 16.0,
+    "years": 4,
+    "km": 90000,
+    "url": "https://www.goodyear.com.au/warranty/tyre-protection-plan"
+  },
+  "mileage": [
+    {
+      "tyre": "Goodyear Assurance DuraPlus 2",
+      "km": "70,000 km",
+      "note": "Exclusive to Goodyear Autocare",
+      "url": "https://www.goodyear.com.au/warranty/assurance-duraplus-2-mileage-warranty"
+    },
+    {
+      "tyre": "Goodyear Assurance MaxGuard and MaxGuard SUV",
+      "km": "Up to 80,000 km",
+      "note": "80,000 km for 17\" rims and below, 70,000 km for 18\", 60,000 km for 19\", 50,000 km for 20\" and above",
+      "url": "https://www.goodyear.com.au/warranty/goodyear-assurance-maxguard-goodyear-assurance-maxguard-suv"
+    },
+    {
+      "tyre": "Goodyear Wrangler All-Terrain Adventure",
+      "km": "55,000 to 95,000 km",
+      "note": "Depends on tyre size and construction",
+      "url": "https://www.goodyear.com.au/warranty/wrangler-at-adventure-mileage-warranty"
+    }
+  ],
+  "mileage_years": 5,
+  "range": [
+    {
+      "family": "Assurance",
+      "for": "Everyday cars and SUVs",
+      "models": [
+        "ComfortTred",
+        "DuraPlus 2",
+        "MaxGuard",
+        "MaxGuard SUV"
+      ]
+    },
+    {
+      "family": "Eagle F1",
+      "for": "Performance and prestige",
+      "models": [
+        "Asymmetric 6",
+        "Asymmetric 6 SUV",
+        "Asymmetric 5",
+        "SuperSport"
+      ]
+    },
+    {
+      "family": "Wrangler",
+      "for": "4WD, ute and SUV",
+      "models": [
+        "DuraTrac RT",
+        "All-Terrain Adventure",
+        "Territory HT",
+        "Territory RT",
+        "Territory MT",
+        "Boulder MT"
+      ]
+    },
+    {
+      "family": "ElectricDrive",
+      "for": "Electric vehicles",
+      "models": [
+        "ElectricDrive"
+      ]
+    },
+    {
+      "family": "Cargo",
+      "for": "Vans and light commercial",
+      "models": [
+        "Cargo Marathon 2",
+        "Cargo Vector 2"
+      ]
+    }
+  ],
+  "goodyear_store_listing": {
+    "url": "https://www.goodyear.com.au/store-locator/goodyear-autocare-hobart",
+    "address": "96 Brisbane Street Hobart TAS 7000",
+    "phone": "(03) 6234 3787",
+    "email": "hobart@goodyear.com.au",
+    "hours": "Mon-Fri 8:00AM-5:00PM, Sat 9:00AM-12:00PM, Sun Closed"
+  },
+  "_participation_note": "Harshil confirmed on 24 Nov 2026 that the store takes part in Goodyear's national promotions and offers the Tyre Protection Plan, so new Goodyear promotions can be added automatically.",
+  "_hours_note": "Harshil confirmed Saturday hours are 9am-1pm (our site is right; Goodyear's store listing showing 9am-12pm is out of date - he'll ask Goodyear to fix it)."
+}

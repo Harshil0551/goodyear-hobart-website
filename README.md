@@ -22,6 +22,10 @@ site/                    <- the only folder Netlify publishes (see netlify.toml)
   index.html             <- the whole site: one self-contained page, images embedded
   _headers               <- security headers (CSP, X-Frame-Options, etc.)
   .well-known/security.txt
+data/goodyear.json       <- facts for the "Goodyear deals & warranties" section
+data/goodyear_snapshot.json <- last copy of Goodyear's pages (for spotting changes)
+tools/check_goodyear.py  <- daily: compares goodyear.com.au with the last snapshot
+tools/build_goodyear.py  <- rebuilds that section of site/index.html from data/goodyear.json
 tests/check_live.py      <- post-deploy check (Playwright)
 netlify.toml             <- publish = "site"
 ```
@@ -45,8 +49,22 @@ netlify.toml             <- publish = "site"
 5. Check: `python3 tests/check_live.py` should print `RESULT: OK`, and
    `curl -sI https://goodyearautocarehobart.com/` should show the security headers.
 
+## Goodyear deals & warranties (updated daily)
+
+1. `python3 tools/check_goodyear.py` - prints what changed on goodyear.com.au
+   (exit code 10 = something changed).
+2. If a promotion is running, add it to `promotions` in `data/goodyear.json` with the
+   exact dates, conditions and Goodyear's terms link. Ended ones drop off by themselves.
+   If a warranty number changed, update it there too. Update `checked` to today.
+3. `python3 tools/build_goodyear.py`, then deploy and check as above.
+
+Never invent or round a deal, date or number: copy what Goodyear publishes.
+The store takes part in Goodyear's national promotions and offers the Tyre
+Protection Plan (confirmed by Harshil, 24 Nov 2026).
+
 ## Dates to remember
 
+- Workshop end-of-year deals end 31 Dec 2026 (the page hides them by itself after that).
 - `security.txt` expires **2027-11-22** – renew the `Expires:` line before then.
 - Domain renewal: keep auto-renew on at the registrar.
 
