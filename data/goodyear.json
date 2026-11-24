@@ -1,7 +1,8 @@
 {
   "_about": "Facts shown in the 'Goodyear deals & warranties' section of site/index.html. Edit this file, then run: python3 tools/build_goodyear.py. 'checked' is the date this summary was last UPDATED (shown on the site as 'Last updated'); only change it when the content changes. Everything here must match goodyear.com.au in meaning; never invent a deal, date or number.",
   "checked": "2026-11-24",
-  "store_participates_in_national_promotions": true,
+  "promotions_need_approval": true,
+  "_approval_note": "24 Nov 2026: Harshil wants to be told about each new Goodyear promotion BEFORE it goes on the website, so he can confirm whether the store is taking part. Add new promotions with \"approved\": false and message him; set \"approved\": true only after he says yes. The store does offer the Tyre Protection Plan and mileage warranties.",
   "promotions": [],
   "closed_promotions_seen": [
     {
@@ -98,6 +99,5 @@
     "email": "hobart@goodyear.com.au",
     "hours": "Mon-Fri 8:00AM-5:00PM, Sat 9:00AM-12:00PM, Sun Closed"
   },
-  "_participation_note": "Harshil confirmed on 24 Nov 2026 that the store takes part in Goodyear's national promotions and offers the Tyre Protection Plan, so new Goodyear promotions can be added automatically.",
   "_hours_note": "Harshil confirmed Saturday hours are 9am-1pm (our site is right; Goodyear's store listing showing 9am-12pm is out of date - he'll ask Goodyear to fix it)."
 }

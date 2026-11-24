@@ -57,8 +57,12 @@ def promo_card(p):
 
 
 def build(d, today):
-    live = [p for p in d.get("promotions", []) if dt.date.fromisoformat(p["purchase_to"]) >= today]
-    dropped = [p["title"] for p in d.get("promotions", []) if p not in live]
+    # A promotion only goes on the site once Harshil has confirmed the store is taking part
+    # ("approved": true). Ended promotions drop off automatically.
+    current = [p for p in d.get("promotions", []) if dt.date.fromisoformat(p["purchase_to"]) >= today]
+    live = [p for p in current if p.get("approved") is True]
+    waiting = [p["title"] for p in current if p.get("approved") is not True]
+    dropped = [p["title"] for p in d.get("promotions", []) if p not in current]
     if live:
         promos = '<div class="gy-promo-grid">' + "".join(promo_card(p) for p in live) + "</div>"
     else:
@@ -77,8 +81,7 @@ def build(d, today):
         f'<div class="gy-chips">{"".join(f"<span>{e(m)}</span>" for m in r["models"])}</div></div>'
         for r in d["range"]
     )
-    part = d.get("store_participates_in_national_promotions")
-    who = "participating Goodyear Autocare stores, including ours" if part else "participating Goodyear Autocare stores"
+
 
     section = f"""{START}
 <style>
@@ -180,20 +183,20 @@ def build(d, today):
       </div>
     </div>
 
-    <p class="gy-note">This is a summary of Goodyear Australia's published warranties and promotions, which we check every day. Last updated {nice_date(d["checked"])}. Goodyear's full terms apply and can change: read them at <a href="https://www.goodyear.com.au/warranty" target="_blank" rel="noopener">goodyear.com.au/warranty</a> and <a href="https://www.goodyear.com.au/promotions" target="_blank" rel="noopener">goodyear.com.au/promotions</a>. Goodyear promotions, the Tyre Protection Plan and mileage warranties are offered at {who}. Our goods and services come with guarantees that cannot be excluded under the Australian Consumer Law.</p>
+    <p class="gy-note">This is a summary of Goodyear Australia's published warranties and promotions, which we check every day. Last updated {nice_date(d["checked"])}. Goodyear's full terms apply and can change: read them at <a href="https://www.goodyear.com.au/warranty" target="_blank" rel="noopener">goodyear.com.au/warranty</a> and <a href="https://www.goodyear.com.au/promotions" target="_blank" rel="noopener">goodyear.com.au/promotions</a>. The Tyre Protection Plan and mileage warranties are offered at participating Goodyear Autocare stores, including ours. Goodyear promotions only appear here once we've confirmed we're taking part. Our goods and services come with guarantees that cannot be excluded under the Australian Consumer Law.</p>
   </div>
 </section>
 <script>
 (function(){{document.querySelectorAll('#goodyear [data-ends]').forEach(function(el){{var d=new Date(el.getAttribute('data-ends')+'T23:59:59+11:00');if(d<new Date())el.remove();}});}})();
 </script>
 {END}"""
-    return section, live, dropped
+    return section, live, dropped, waiting
 
 
 def main():
     d = json.loads(DATA.read_text(encoding="utf-8"))
     today = dt.datetime.now(ZoneInfo("Australia/Hobart")).date()
-    section, live, dropped = build(d, today)
+    section, live, dropped, waiting = build(d, today)
     page = PAGE.read_text(encoding="utf-8")
     if "<!-- GOODYEAR:START" in page:
         new = re.sub(r"<!-- GOODYEAR:START.*?<!-- GOODYEAR:END -->", lambda m: section, page, count=1, flags=re.S)
@@ -204,7 +207,7 @@ def main():
         end = page.find("</section>", anchor) + len("</section>")
         new = page[:end] + "\n\n" + section + "\n" + page[end:]
     PAGE.write_text(new, encoding="utf-8")
-    print(f"Built Goodyear section: {len(live)} live promotion(s); dropped as ended: {dropped or 'none'}")
+    print(f"Built Goodyear section: {len(live)} live promotion(s); waiting for Harshil's OK: {waiting or 'none'}; dropped as ended: {dropped or 'none'}")
 
 
 if __name__ == "__main__":

@@ -53,14 +53,16 @@ netlify.toml             <- publish = "site"
 
 1. `python3 tools/check_goodyear.py` - prints what changed on goodyear.com.au
    (exit code 10 = something changed).
-2. If a promotion is running, add it to `promotions` in `data/goodyear.json` with the
-   exact dates, conditions and Goodyear's terms link. Ended ones drop off by themselves.
+2. If a new promotion is running, add it to `promotions` in `data/goodyear.json` with the
+   exact dates, conditions and Goodyear's terms link and `"approved": false`, and ask
+   Harshil whether the store is taking part. Only after he says yes, set
+   `"approved": true` (only approved promotions are shown). Ended ones drop off by themselves.
    If a warranty number changed, update it there too. Update `checked` to today.
 3. `python3 tools/build_goodyear.py`, then deploy and check as above.
 
 Never invent or round a deal, date or number: copy what Goodyear publishes.
-The store takes part in Goodyear's national promotions and offers the Tyre
-Protection Plan (confirmed by Harshil, 24 Nov 2026).
+The store offers the Tyre Protection Plan and mileage warranties. Each Goodyear
+promotion needs Harshil's OK before it goes on the site (his instruction, 24 Nov 2026).
 
 ## Dates to remember
 
