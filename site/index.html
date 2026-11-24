@@ -704,6 +704,7 @@ footer li{padding:4px 0}
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Book a Service</button>
         <a class="btn btn-ghost" href="#shop">Shop Tyres</a>
       </div>
+      <a class="ht-link" href="#how-to-book">&#9654; New here? Watch how to book online (1 min)</a>
       <div class="trust-row">
         <div><svg viewBox="0 0 24 24"><path d="M12 3c3 4 6 6.5 6 10a6 6 0 01-12 0c0-3.5 3-6 6-10z"/></svg>Penrite oils</div>
         <div><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg>Afterpay available</div>
@@ -738,6 +739,56 @@ footer li{padding:4px 0}
       <div class="stat rv"><b>FREE</b><span>wheel alignment for members with any set of 4 tyres</span></div>
       <div class="stat rv"><b>$149</b><span>per hour labour rate</span></div>
       <div class="stat rv"><b>$145</b><span>roadworthy certificate — drop off &amp; we do the rest</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW TO BOOK (video) ================= -->
+<style>
+.howto .ht-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:40px;align-items:center}
+.ht-video{border-radius:var(--r);overflow:hidden;box-shadow:0 20px 50px rgba(10,24,56,.18);background:var(--navy);aspect-ratio:16/9}
+.ht-video video{width:100%;height:100%;display:block;background:var(--navy)}
+.ht-steps{list-style:none;counter-reset:s;margin:0;padding:0}
+.ht-steps li{counter-increment:s;display:flex;gap:14px;align-items:flex-start;margin:0 0 12px}
+.ht-steps li::before{content:counter(s);flex:0 0 34px;height:34px;border-radius:50%;background:var(--yellow);color:var(--navy);font-family:"Barlow Condensed";font-weight:800;font-size:20px;display:flex;align-items:center;justify-content:center}
+.ht-steps b{display:block;color:var(--navy);font-size:17px;line-height:1.3;margin-top:5px}
+.ht-steps span{display:block;color:var(--muted);font-size:15px;line-height:1.45}
+.ht-note{margin-top:8px;font-size:14px;color:var(--muted)}
+.ht-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.ht-link{display:inline-block;margin-top:16px;color:#fff;font-weight:600;text-decoration:underline;text-underline-offset:4px;opacity:.92}
+.ht-link:hover{opacity:1;color:var(--yellow)}
+@media(max-width:900px){.howto .ht-grid{grid-template-columns:1fr;gap:26px}}
+@media(max-width:560px){.ht-cta .btn{white-space:normal;text-align:center;flex:1 1 100%}}
+</style>
+<section class="section soft howto" id="how-to-book">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">New website</span>
+      <h2>How to book online</h2>
+      <p>Watch our 1-minute guide, or follow the five steps below. It takes about two minutes.</p>
+    </div>
+    <div class="ht-grid">
+      <div class="ht-video rv">
+        <video controls preload="none" playsinline poster="/media/how-to-book-poster.jpg" aria-label="Video: how to book your car in on our website">
+          <source src="/media/how-to-book.mp4" type="video/mp4">
+          <track kind="captions" src="/media/how-to-book.en.vtt" srclang="en" label="English" default>
+          Your browser can't play this video. Follow the steps beside it instead.
+        </video>
+      </div>
+      <div class="rv">
+        <ol class="ht-steps">
+          <li><div><b>Pick what you need</b><span>A service, tyres, brakes, a roadworthy, a free tyre inspection and more. You'll see an estimate straight away.</span></div></li>
+          <li><div><b>Add your car</b><span>Rego, make and model, and the odometer reading.</span></div></li>
+          <li><div><b>Choose a day and drop-off time</b></div></li>
+          <li><div><b>Add any extras</b><span>Pick-up and drop-off, a car wash, tyre cleaning, and any discounts.</span></div></li>
+          <li><div><b>Your details</b><span>Name, mobile and how you'd like your quote: text, email or both. Agree to the terms and hit Send.</span></div></li>
+        </ol>
+        <p class="ht-note">Your booking is a request: we'll text or email you to confirm, and you'll always get a quote before any work starts. Online prices are estimates and <a href="#terms">T&amp;Cs apply</a>. This website is only for Goodyear Auto Care Hobart, 94–96 Brisbane Street.</p>
+        <div class="ht-cta">
+          <button class="btn btn-y" data-open-book>Book now</button>
+          <a class="btn btn-o" href="tel:0362343787">Call (03) 6234 3787</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1226,7 +1277,7 @@ footer li{padding:4px 0}
         <p style="margin-top:16px">94-96 Brisbane Street, Hobart TAS 7000<br><a href="tel:0362343787">(03) 6234 3787</a> · <a href="mailto:hobart@goodyear.com.au">hobart@goodyear.com.au</a></p>
       </div>
       <div><h4>Services</h4><ul><li><a href="#services">Tyres &amp; alignments</a></li><li><a href="#services">Car servicing</a></li><li><a href="#services">Brakes &amp; repairs</a></li><li><a href="#ppi">Pre-purchase inspections</a></li><li><a href="#detailing">Detailing</a></li></ul></div>
-      <div><h4>Save</h4><ul><li><a href="#deals">End-of-year deals</a></li><li><a href="#goodyear">Goodyear warranties</a></li><li><a href="#membership">Membership</a></li><li><a href="#shop">Tyres &amp; parts</a></li><li><a href="#contact">Fleet servicing</a></li></ul></div>
+      <div><h4>Save</h4><ul><li><a href="#deals">End-of-year deals</a></li><li><a href="#goodyear">Goodyear warranties</a></li><li><a href="#how-to-book">How to book online</a></li><li><a href="#membership">Membership</a></li><li><a href="#shop">Tyres &amp; parts</a></li><li><a href="#contact">Fleet servicing</a></li></ul></div>
       <div><h4>Follow</h4><ul><li><a href="https://www.instagram.com/goodyearhobart/" target="_blank" rel="noopener">Instagram</a></li><li><a href="#faq">FAQ</a></li><li><a href="#terms">Terms &amp; conditions</a></li><li><a href="#t-website" data-open-terms="website">Website terms of use</a></li><li><a href="#contact">Contact</a></li></ul></div>
     </div>
     <p class="fterms">Prices include GST. End-of-year deals valid until 31 December 2026. Membership launches 1 January 2027; valid 3 years from purchase, per member; terms and conditions apply. Senior and pensioner discounts with a valid card. Afterpay available, subject to approval. <a href="#terms" style="color:#ffd100">Full terms &amp; conditions</a>.</p>
